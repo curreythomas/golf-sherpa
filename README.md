@@ -53,7 +53,7 @@ const s = StyleSheet.create({
 
 - FAQ: Display FAQs 
     - UI Route: /faq
-    - Use API, return an array of objects 
+    - Use API to GET to /faq and return an array of objects 
     ```
     const faqs = [
     {question: This is the question?, answer: This is the answer.},
@@ -123,10 +123,32 @@ User elects to add a tee time for that course by selecting the FAB button. User 
 
 ## Database
 
-- FAQ
-- Course
-  - name  "Torrey Pines"
-  - picURL "http://some course pic.png
-  - price
+- FAQ 
+```
+    [
+        {question: This is the question?, answer: This is the answer.},
+        {question: This is the question?, answer: This is the answer.},
+        {question: This is the question?, answer: This is the answer.}
+    ]
+```
+- Courses
+```
+[
+    {
+       name: "Course Name",
+       address: "Course Address",
+       city: "Course City",
+       state: "Course State",
+       zip: "Course Zip",
+       phone number: "Course Phone Number",
+       website: "Course Website",
+       date: "Round Date",
+       time: "tee time",
+       golfers: "number of golfers",
+       rate: "price per person",
+       picURL: "image url"
+    }
+]
+```
   
 
