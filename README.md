@@ -2,28 +2,105 @@
 
 ## Chrome
 
-0. NavBar
-0. NavBar Popup Menu
-0. Navbar Profile Icon
+0. AppBar
+    - https://material-ui-next.com/demos/app-bar/
+0. AppBar Popup Menu
+    - https://material-ui-next.com/demos/menus/
 0. Bottom Navigation
     - https://material-ui-next.com/demos/bottom-navigation/
+0. Overlay for Background Images - Custom CSS with similar features to this react-native example:
+```
+import React, { Component } from 'react';
+import { Image, StyleSheet, View } from 'react-native';
+
+export default class App extends Component {
+  render() {
+    return (
+      <Image source={{uri: 'http://www.thegolfclubgame.com/picture_library/The_Golf_Club_Wallpaper_02_1920x1080.jpg'}} style={s.backgroundImage}>
+        <View style={s.overlay}/>
+      </Image>
+    );
+  }
+}
+
+const s = StyleSheet.create({
+  backgroundImage: {
+      flex: 1,
+      width: null,
+      height: null,
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'black',
+    opacity: 0.4
+  }
+});
+```
 
 ## In Scope
 
 - Home: Display homepage
+    - UI Route: /
+    - with **AppBar/BottomNav** 
 
 - About: Display About page 
+    - UI Route: /about
     - Hardcode Text
 
 - FAQ: Display FAQs 
-    - Use API
+    - UI Route: /faq
+    - Use API, return an array of objects 
+    ```
+    const faqs = [
+    {question: This is the question?, answer: This is the answer.},
+    {question: This is the question?, answer: This is the answer.},
+    {question: This is the question?, answer: This is the answer.}
+    ]
+    ```
 
 - Contact: Add Contact
+    - UI Route: /contact/add
+    - Material-UI **Text Fields** Components
+        - https://material-ui-next.com/demos/text-fields/
+    - Figure out how to send form data to email address  
 
 - List Courses
-
+    - UI Route: /courses
+    - API Route: GET /courses
+    - 2 Material-UI **Cards** wide by unlimited height on the page, scroll down to see more
+        - https://material-ui-next.com/demos/cards/
+    - Separate Material-UI **Selects** to filter on city, number of golfers, time.  
+        - https://material-ui-next.com/demos/selects/
+    
 - View Single Course
-
+    - UI Route: /courses/:id
+    - API Route: GET /courses/:id
+    - Implement a secondary menu option to give the ability to go back to list of courses.
+        ```
+        <IconButton
+            className={classes.firstButton}
+            color="contrast"
+            aria-label="Menu"
+            onClick={
+              props.goBack
+                ? typeof props.goBack === 'string'
+                  ? props.lastPage(props.history, props.goBack)
+                  : props.lastPage(props.history)
+                : props.toggleDrawer
+            }
+          >
+            {props.goBack ? (
+              <GoBackIcon style={{ fontSize: 32, marginTop: 0 }} />
+            ) : (
+              <MenuIcon />
+            )}
+          </IconButton>
+        ```
+    
 - Book Tee Time  
 
 ## Out of Scope
@@ -46,8 +123,8 @@ User elects to add a tee time for that course by selecting the FAB button. User 
 
 ## Database
 
-FAQ
-Course
+- FAQ
+- Course
   - name  "Torrey Pines"
   - picURL "http://some course pic.png
   - price
