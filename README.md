@@ -135,11 +135,13 @@ User elects to add a tee time for that course by selecting the FAB button. User 
 ```
 [
     {
+       _id: "course_course_name"
        name: "Course Name",
        address: "Course Address",
        city: "Course City",
        state: "Course State",
        zip: "Course Zip",
+       description: "Some description about the course",
        phone number: "Course Phone Number",
        website: "Course Website",
        date: "Round Date",
