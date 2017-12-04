@@ -75,6 +75,8 @@ const s = StyleSheet.create({
     - API Route: GET /courses
     - 2 Material-UI **Cards** wide by unlimited height on the page, scroll down to see more
         - https://material-ui-next.com/demos/cards/
+    - Possibly Use Grid List to display the coureses.
+        - https://material-ui-next.com/demos/grid-list/
     - Separate Material-UI **Selects** to filter on city, number of golfers, time.  
         - https://material-ui-next.com/demos/selects/
     
@@ -149,6 +151,7 @@ User elects to add a tee time for that course by selecting the FAB button. User 
        date: "Round Date",
        time: "tee time",
        golfers: "number of golfers",
+       holes: "number of holes",
        rate: "price per person",
        picURL: "image url"
     }
