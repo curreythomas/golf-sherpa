@@ -61,6 +61,8 @@ const s = StyleSheet.create({
     {question: This is the question?, answer: This is the answer.}
     ]
     ```
+    - Question in the summary, answer in the expansion details
+        - https://material-ui-next.com/demos/expansion-panels/
 
 - Contact: Add Contact
     - UI Route: /contact/add
